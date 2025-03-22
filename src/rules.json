@@ -1,5 +1,68 @@
 [
-  { "pattern": "\\*\\*(.*?)\\*\\*", "replacement": "*$1*" },
-  { "pattern": "^# #(.*?)\\n", "replacement": "*_$1_*\n" },
-  { "pattern": "^#(.*?)\\n", "replacement": "*_$1_*\n" }
-] 
+    {
+      "description": "1) Convert multi-level headings (#) to bold lines",
+      "pattern": "^#{1,6}\\s+(.*?)\\s*(\\n|$)",
+      "replacement": "*$1*$2"
+    },
+    {
+      "description": "2) Convert horizontal rules (---, ***, ___) to a Unicode line",
+      "pattern": "^(?:---+|\\*\\*\\*+|___+)\\s*$",
+      "replacement": "\n⎯⎯⎯⎯⎯⎯⎯⎯⎯\n"
+    },
+    {
+      "description": "3) Convert block quotes: lines starting with '>' (ensure there's a space)",
+      "pattern": "^(\\s*)>\\s?(.*)$",
+      "replacement": "> $2"
+    },
+    {
+      "description": "4) Convert strikethrough: ~~text~~ => ~text~",
+      "pattern": "~~(.*?)~~",
+      "replacement": "~$1~\n"
+    },
+    {
+      "description": "5) Convert double-asterisk bold: **text** => *text*",
+      "pattern": "\\*\\*(.*?)\\*\\*",
+      "replacement": "*$1*"
+    },
+    {
+      "description": "6) Convert double-underscore bold: __text__ => *text*",
+      "pattern": "__(.*?)__",
+      "replacement": "*$1*"
+    },
+    {
+      "description": "7) Convert single-asterisk italics: *text* => _text_",
+      "pattern": "(?<!\\*)\\*(?!\\*)(.*?)\\*(?!\\*)",
+      "replacement": "_$1_"
+    },
+    {
+      "description": "8) Convert single-underscore italics: _text_ => _text_",
+      "pattern": "(?<!_)_(?!_)(.*?)_(?!_)",
+      "replacement": "_$1_"
+    },
+    {
+      "description": "9) Convert Markdown links: [text](url) => text (url)",
+      "pattern": "\\[(.*?)\\]\\((.*?)\\)",
+      "replacement": "$1 ($2)"
+    },
+    {
+      "description": "10) Convert Markdown images: ![alt](url) => alt: url",
+      "pattern": "!\\[(.*?)\\]\\((.*?)\\)",
+      "replacement": "$1: $2"
+    },
+    {
+      "description": "11) Convert bullet lists: lines starting with '-' or '*' => '* '",
+      "pattern": "^(\\s*)[-*]\\s",
+      "replacement": "$1* "
+    },
+    {
+      "description": "12) Remove language specifiers from code fences: ```lang => ```",
+      "pattern": "```\\s*([a-zA-Z0-9]+)",
+      "replacement": "```"
+    },
+    {
+      "description": "13) Add extra line after code blocks",
+      "pattern": "```\\s*$",
+      "replacement": "```\n"
+    }
+  ]
+  

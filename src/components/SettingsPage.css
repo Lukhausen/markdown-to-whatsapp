@@ -1,0 +1,258 @@
+.settings-page {
+  padding: 15px;
+  max-height: 500px;
+  overflow-y: auto;
+  color: #e1e1e1;
+}
+
+.settings-page h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.rules-container {
+  margin: 15px 0;
+  border: 1px solid #444;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #2a2a2a;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.rule-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: #333;
+  border-bottom: 1px solid #444;
+}
+
+.rule-item:last-child {
+  border-bottom: none;
+}
+
+.rule-handle {
+  cursor: grab;
+  font-size: 16px;
+  margin-right: 8px;
+  color: #888;
+}
+
+.rule-content {
+  flex: 1;
+}
+
+.rule-field {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.rule-field:last-child {
+  margin-bottom: 0;
+}
+
+.rule-label {
+  font-weight: bold;
+  margin-right: 6px;
+  color: #aaa;
+  min-width: 70px;
+  font-size: 0.9rem;
+}
+
+.rule-input {
+  flex: 1;
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.rule-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #888;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+
+.delete-btn:hover {
+  color: #ff6b6b;
+}
+
+.add-rule-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.add-rule-btn:hover {
+  background-color: #3a80d2;
+}
+
+.rule-editor {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.rule-editor .rule-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.rule-editor button {
+  padding: 8px 16px;
+}
+
+.rule-editor button:first-child {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #444;
+  margin-bottom: 15px;
+}
+
+.rule-item.placeholder {
+  opacity: 0.6;
+  background-color: #2a2a2a;
+  transition: opacity 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.rule-item.placeholder:hover {
+  opacity: 1;
+  background-color: #333;
+}
+
+.rule-item.placeholder .rule-handle {
+  color: #555;
+  cursor: default;
+}
+
+.rule-item.placeholder .rule-input {
+  background-color: #383838;
+  color: #aaa;
+  cursor: text;
+}
+
+.rule-item.placeholder:hover .rule-input {
+  background-color: #444;
+  color: #fff;
+}
+
+.rule-item.placeholder input::placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+.delete-btn-placeholder {
+  width: 36px;
+}
+
+.reset-defaults-btn {
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.reset-defaults-btn:hover {
+  background-color: #777;
+}
+
+.rule-showcase {
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #2d2d2d;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 3px solid #4a7baa;
+  transition: background-color 0.2s ease;
+}
+
+.rule-showcase:hover {
+  background-color: #303030;
+}
+
+.showcase-text {
+  padding: 3px 6px;
+  background-color: #383838;
+  border-radius: 3px;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.showcase-arrow {
+  color: #888;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.showcase-label {
+  color: #999;
+  font-size: 0.8rem;
+  margin-right: 2px;
+  font-style: italic;
+} 
