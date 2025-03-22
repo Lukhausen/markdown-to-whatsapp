@@ -1,5 +1,5 @@
 [
   { "pattern": "\\*\\*(.*?)\\*\\*", "replacement": "*$1*" },
-  { "pattern": "^##(.*?)\\n", "replacement": "*_$1_*\n" },
+  { "pattern": "^# #(.*?)\\n", "replacement": "*_$1_*\n" },
   { "pattern": "^#(.*?)\\n", "replacement": "*_$1_*\n" }
 ] 
